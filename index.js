@@ -1,0 +1,32 @@
+/*
+ * fis
+ * http://fis.baidu.com/
+ */
+
+'use strict';
+
+var less = require('less'),
+    LessPluginFunctions = require('less-plugin-functions'),
+    LessPluginFn = new LessPluginFunctions();
+var root = fis.project.getProjectPath();
+
+module.exports = function(content, file, conf){
+
+    conf.paths = [ file.dirname, root ];
+    conf.syncImport = true;
+    conf.relativeUrls = true;
+    conf.plugins = [LessPluginFn];
+
+    less.render(content, conf, function (err, result) {
+        if (err) {
+            throw err;
+            return;
+        }
+        content = result.css;
+        result.imports.forEach(function (path) {
+            file.cache.addDeps(path);
+        });
+    });
+
+  return content;
+};

@@ -1,0 +1,22 @@
+{
+    "name" : "fis-parser-less-2.x-function-plus",
+    "description" : "A parser for fis to compile less(v2.x) file with less-plugin-functions.",
+    "version" : "0.1.0",
+    "author" : "yuaptx4869 <yuyu200302@163.com>",
+    "homepage" : "https://github.com/yuaptx4869/fis-parser-less-2.x-function-plus",
+    "keywords": [ "fis", "less", "less function" ],
+    "license": "MIT",
+    "main" : "index.js",
+    "engines" : {
+        "node" : ">= 0.8.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yuaptx4869/fis-parser-less-2.x-function-plus"
+    },
+    "scripts" : {},
+    "dependencies" : {
+        "less" : "2.5.0",
+        "less-plugin-functions": "1.0.0"
+    }
+}
